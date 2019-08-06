@@ -1,13 +1,6 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun 26 07:40:54 2019
-
-@author: Ignite303
-"""
 # Problem 3 - Using Bisection Search to Make the Program Faster
-
 # (20/20 points)
+
 # You'll notice that in Problem 2, your monthly payment had to be a multiple of $10. Why did we make it that way? You can try running
 # your code locally so that the payment can be any dollar and cent amount (in other words, the monthly payment is a multiple of $0.01).
 # Does your code still work? It should, but you may notice that your code runs more slowly, especially in cases with very large balances
@@ -44,12 +37,11 @@ Created on Wed Jun 26 07:40:54 2019
 # value as you did in Problem 2.
 
 # Note that if you do not use bisection search, your code will not run - your code only has 30 seconds to run on our servers.
-    
+
 # Paste your code into this box
-
-balance = 999999.00
-annualInterestRate = 0.18
-
+#---------------------------CODE-------------------------------#
+# balance = 999999.00
+# annualInterestRate = 0.18
 balanceCOPY = balance
 monthlyInterestRate = annualInterestRate/12.0
 low = balanceCOPY/12
@@ -59,7 +51,6 @@ epsilon = 0.01
 while abs(balance) > epsilon:
     monthlyPaymentRate = (high + low)/2
     balance = balanceCOPY
-
     for i in range(12):
         balance = balance - monthlyPaymentRate + ((balance - monthlyPaymentRate) * monthlyInterestRate)
     if balance > epsilon:
@@ -69,4 +60,5 @@ while abs(balance) > epsilon:
     else:
         break
 print('Lowest Payment:', round(monthlyPaymentRate, 2))
-
+# -------------------------------Result-------------------------------#
+# Correct
