@@ -19,6 +19,3 @@ for char in string:
 print('Number of vowels: ' + str(numVowels))
 # -------------------------------Result-------------------------------#    
 # Correct
-
-
-
