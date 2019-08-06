@@ -1,13 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun 26 01:15:29 2019
-
-@author: Ignite303
-"""
-
 # Problem 2 - Paying Debt Off in a Year
-
 # (15/15 points)
 
 # Now write a program that calculates the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months.
@@ -31,27 +22,22 @@ Created on Wed Jun 26 01:15:29 2019
     # Monthly interest rate = (Annual interest rate) / 12.0
     # Monthly unpaid balance = (Previous balance) - (Minimum fixed monthly payment)
     # Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
-
-# Paste your code into this box
     
-balance = 5000.00
-annualInterestRate = 0.18
-
+# Paste your code into this box
+#---------------------------CODE-------------------------------#    
+# balance = 5000.00
+# annualInterestRate = 0.18
 monthlyPayment = 10
 balanceCOPY = balance
 monthlyInterestRate = annualInterestRate/12
-
 while balance > 0:
     for i in range(12):
         balance = balance - monthlyPayment + ((balance - monthlyPayment) * monthlyInterestRate)
-    
     if balance > 0:
         monthlyPayment += 10
-        balance = balanceCOPY
-    
+        balance = balanceCOPY 
     elif balance <= 0:
         break
-    
 print('Lowest Payment: ', monthlyPayment)
-
-
+# -------------------------------Result-------------------------------#    
+# Correct
