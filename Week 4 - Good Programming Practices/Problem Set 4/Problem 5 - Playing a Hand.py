@@ -32,25 +32,24 @@ def playHand(hand, wordList, n):
       wordList: list of lowercase strings
       n: integer (HAND_SIZE; i.e., hand size required for additional points)
     """
-    totalScore = 0
+    total_score = 0
     while calculateHandlen(hand) > 0:
-        c_hand = displayHand(hand)
-        print("Current hand " + str(c_hand),end=" ")
-        word = input(str('Enter word, or a "." to indicate that you are finished: '))
+        print("Current hand: ", end = "")
+        displayHand(hand)
+        word = input('Enter a word, or a "." to indicate that you are finished: ')    
         if word == ".":
-            print("Goodbye! Total score: " + str(totalScore) + " points.")
-            break
+            print('Goodbye! Total Score: ' + str(total_score))
+            return total_score
         else:
-            if isValidWord(word,hand, wordList) != True:
-                print("Invalid word, please try again.")
-                print("")
+            if isValidWord(word, hand, wordList) == False:
+                print('Invalid word, please try again.\n ')
+                continue    
             else:
-                wordScore = getWordScore(word, n)
-                totalScore += wordScore
-                print('" ' + word + ' "' + " earned " + str(wordScore) + " points. Total: " + str(totalScore) + " points")
-                print("")
+                total_score += getWordScore(word, n)
+                print('"' + word + '"', 'earned', getWordScore(word, n), ' points. Total: ', total_score, ' points\n') 
                 hand = updateHand(hand, word)
-    else:
-        print("Run out of letters. Total score: " + str(totalScore) + " points.")
+                continue
+    print('Run out of letters. Total score: ' + str(total_score) + ' points.')
+    return total_score
 # -------------------------------Result-------------------------------#
 # Correct
