@@ -22,20 +22,20 @@ def playGame(wordList):
  
     2) When done playing the hand, repeat from step 1
     """
-    exit = False
-    while exit == False:
-        playerCommand = input(str("Enter n to deal a new hand, r to replay the last hand, or e to end game: "))
-        if playerCommand == "n":
+    hand = {}    
+    while True:        
+        letter = input('Enter n to deal a new hand, r to replay the last hand, or e to end game: ')        
+        if letter == 'n':
             hand = dealHand(HAND_SIZE)
             playHand(hand, wordList, HAND_SIZE)
-        elif playerCommand == "r":
-            try:
+        elif letter == 'r':                
+            if hand == {}:
+                print('You have not played a hand yet. Please play a new hand first!')
+            else:
                 playHand(hand, wordList, HAND_SIZE)
-            except NameError:
-                print("You have not played a hand yet. Please play a new hand first!")
-        elif playerCommand == "e":
-            exit = True
+        elif letter == 'e':
+            break
         else:
-            print("Invalid command.")
+            print('Invalid command.')
 # -------------------------------Result-------------------------------#
 # Correct
