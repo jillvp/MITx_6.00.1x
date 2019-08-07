@@ -1,6 +1,6 @@
-
 # Exercise: simple divide
 # 5.0/5.0 points (graded)
+
 # ESTIMATED TIME TO COMPLETE: 4 minutes
 
 # Suppose we rewrite the FancyDivide function to use a helper function.
