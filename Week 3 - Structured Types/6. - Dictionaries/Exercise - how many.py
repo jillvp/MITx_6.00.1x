@@ -26,3 +26,5 @@ def how_many(aDict):
     for key in aDict:
         sum += len(aDict[key])
     return sum
+
+# Correct
